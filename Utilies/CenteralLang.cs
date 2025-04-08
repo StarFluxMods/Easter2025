@@ -9,7 +9,7 @@ namespace Easter2025.Utilies
         {
             public static List<(Locale, ApplianceInfo)> HotCrossBunsProvider => new()
             {
-                (Locale.English, new ApplianceInfo { Name = "Hot Cross Buns", Description = "Provides Hot Cross Buns" }),
+                (Locale.English, new ApplianceInfo { Name = "Hot Cross Buns", Description = "Provides Hot Cross Buns" })
             };
         }
     }

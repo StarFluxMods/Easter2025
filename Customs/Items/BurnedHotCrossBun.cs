@@ -7,18 +7,18 @@ using UnityEngine;
 
 namespace Easter2025.Customs.Items
 {
-    public class CutCookedHotCrossBun : GenericStackableItem
+    public class BurnedHotCrossBun : GenericStackableItem
     {
-        public override string UniqueNameID => "CutCookedHotCrossBun";
-        public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("CutCookedHotCrossBun").AssignMaterialsByNames();
+        public override string UniqueNameID => "BurnedHotCrossBun";
+        public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("BurnedHotCrossBun").AssignMaterialsByNames();
 
         public override List<Item.ItemProcess> Processes => new()
         {
             new Item.ItemProcess
             {
-                Process = GDOReferences.Cook,
+                Process = GDOReferences.Chop,
                 Duration = 1,
-                Result = GDOReferences.CutFlamingHotCrossBun
+                Result = GDOReferences.CutBurnedHotCrossBun
             }
         };
     }

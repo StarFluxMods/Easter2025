@@ -1,11 +1,9 @@
-using System.IO;
-using KitchenLib;
-using KitchenLib.Logging.Exceptions;
-using KitchenMods;
 using System.Linq;
 using System.Reflection;
-using Easter2025.Utilies;
+using KitchenLib;
 using KitchenLib.Interfaces;
+using KitchenLib.Logging.Exceptions;
+using KitchenMods;
 using UnityEngine;
 using KitchenLogger = KitchenLib.Logging.KitchenLogger;
 
@@ -22,7 +20,9 @@ namespace Easter2025
         internal static AssetBundle Bundle;
         internal static KitchenLogger Logger;
 
-        public Mod() : base(MOD_GUID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, MOD_GAMEVERSION, Assembly.GetExecutingAssembly()) { }
+        public Mod() : base(MOD_GUID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, MOD_GAMEVERSION, Assembly.GetExecutingAssembly())
+        {
+        }
 
         protected override void OnInitialise()
         {
@@ -37,7 +37,7 @@ namespace Easter2025
         {
             Bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).FirstOrDefault() ?? throw new MissingAssetBundleException(MOD_GUID);
             Logger = InitLogger();
-            
+
             // RefGenerator.GenerateGDOReferences(Assembly.GetExecutingAssembly(), Path.Combine(Application.persistentDataPath, "GeneratedReferences.cs"));
         }
     }

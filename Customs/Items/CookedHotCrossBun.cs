@@ -20,6 +20,12 @@ namespace Easter2025.Customs.Items
                 Process = GDOReferences.Chop,
                 Duration = 1,
                 Result = GDOReferences.CutCookedHotCrossBun
+            },
+            new Item.ItemProcess
+            {
+                Process = GDOReferences.Cook,
+                Duration = 1,
+                Result = GDOReferences.FlamingHotCrossBun
             }
         };
     }

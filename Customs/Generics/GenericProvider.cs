@@ -3,7 +3,6 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 
-
 namespace Easter2025.Customs.Generics
 {
     public abstract class GenericProvider : CustomAppliance

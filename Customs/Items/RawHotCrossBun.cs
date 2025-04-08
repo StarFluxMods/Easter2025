@@ -12,6 +12,7 @@ namespace Easter2025.Customs.Items
         public override string UniqueNameID => "RawHotCrossBun";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("RawHotCrossBun").AssignMaterialsByNames();
         public override Appliance DedicatedProvider => GDOReferences.HotCrossBunsProvider;
+
         public override List<Item.ItemProcess> Processes => new()
         {
             new Item.ItemProcess

@@ -11,6 +11,7 @@ namespace Easter2025.Customs.Items
     {
         public override string UniqueNameID => "CutRawHotCrossBun";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("CutRawHotCrossBun").AssignMaterialsByNames();
+
         public override List<Item.ItemProcess> Processes => new()
         {
             new Item.ItemProcess
