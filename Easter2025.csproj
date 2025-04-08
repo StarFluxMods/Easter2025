@@ -20,9 +20,6 @@
 		<Folder Condition="Exists('Changelogs')" Include="Changelogs\" />
 		<Folder Condition="Exists('Changelogs\Github')" Include="Changelogs\Github" />
 		<Folder Condition="Exists('Changelogs\Workshop')" Include="Changelogs\Workshop" />
-		<Folder Include="Customs\Appliances\" />
 		<Folder Include="Customs\Dishes\" />
-		<Folder Include="Customs\ItemGroups\" />
-		<Folder Include="Customs\Items\" />
 	</ItemGroup>
 </Project>

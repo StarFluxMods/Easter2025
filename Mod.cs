@@ -1,14 +1,17 @@
+using System.IO;
 using KitchenLib;
 using KitchenLib.Logging.Exceptions;
 using KitchenMods;
 using System.Linq;
 using System.Reflection;
+using Easter2025.Utilies;
+using KitchenLib.Interfaces;
 using UnityEngine;
 using KitchenLogger = KitchenLib.Logging.KitchenLogger;
 
 namespace Easter2025
 {
-    public class Mod : BaseMod, IModSystem
+    public class Mod : BaseMod, IModSystem, IAutoRegisterAll
     {
         public const string MOD_GUID = "com.starfluxgames.easter2025";
         public const string MOD_NAME = "Easter 2025";
