@@ -30,7 +30,6 @@ namespace Easter2025.Customs.ItemGroups
         public override void OnRegister(ItemGroup gameDataObject)
         {
             base.OnRegister(gameDataObject);
-
             if (gameDataObject.Prefab.TryGetComponent(out ItemGroupView itemGroupView))
             {
                 itemGroupView.ComponentGroups = new List<ItemGroupView.ComponentGroup>
@@ -40,8 +39,8 @@ namespace Easter2025.Customs.ItemGroups
                         Item = GDOReferences.CutCookedHotCrossBun,
                         Objects = new List<GameObject>
                         {
-                            gameDataObject.Prefab.GetChild("Top"),
-                            gameDataObject.Prefab.GetChild("Bottom")
+                            gameDataObject.Prefab.GetChild("Hot Cross Bun Split/Top"),
+                            gameDataObject.Prefab.GetChild("Hot Cross Bun Split/Bottom")
                         },
                         DrawAll = true
                     },

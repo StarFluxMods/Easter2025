@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 347137377267829215, guid: 5332eaa3ea4bc364380dcff78d7bad6c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124377316894380901, guid: 5332eaa3ea4bc364380dcff78d7bad6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.14289135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124377316894380901, guid: 5332eaa3ea4bc364380dcff78d7bad6c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14289135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124377316894380901, guid: 5332eaa3ea4bc364380dcff78d7bad6c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2274116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124377316894380901, guid: 5332eaa3ea4bc364380dcff78d7bad6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.035894
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124377316894380901, guid: 5332eaa3ea4bc364380dcff78d7bad6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00000002514
+      objectReference: {fileID: 0}
     - target: {fileID: 2812982770937280705, guid: 5332eaa3ea4bc364380dcff78d7bad6c, type: 3}
       propertyPath: m_Name
       value: HotCrossBun
