@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Easter2025.Components;
 using Easter2025.Customs.Generics;
 using Easter2025.Utilies;
 using Easter2025.Views.Local;
@@ -13,7 +14,12 @@ namespace Easter2025.Customs.Items
     {
         public override string UniqueNameID => "CutFlamingHotCrossBun";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("CutFlamingHotCrossBun").AssignMaterialsByNames().AssignVFXByNames();
-        public override bool IsIndisposable => true;
+        // public override bool IsIndisposable => true;
+
+        public override List<IItemProperty> Properties => new List<IItemProperty>
+        {
+            new CCanTriggerOrbs()
+        };
 
         public override List<Item.ItemProcess> Processes => new()
         {

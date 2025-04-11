@@ -1,8 +1,13 @@
 using System.Linq;
 using System.Reflection;
+using Easter2025.Views;
+using HarmonyLib;
+using KitchenData;
 using KitchenLib;
+using KitchenLib.Event;
 using KitchenLib.Interfaces;
 using KitchenLib.Logging.Exceptions;
+using KitchenLib.References;
 using KitchenMods;
 using UnityEngine;
 using KitchenLogger = KitchenLib.Logging.KitchenLogger;
@@ -39,6 +44,20 @@ namespace Easter2025
             Logger = InitLogger();
 
             // RefGenerator.GenerateGDOReferences(Assembly.GetExecutingAssembly(), Path.Combine(Application.persistentDataPath, "GeneratedReferences.cs"));
+
+            Events.BuildGameDataEvent += (sender, args) =>
+            {
+                if (args.firstBuild && args.gamedata.TryGet(ApplianceReferences.Bin, out Appliance Bin))
+                {
+                    GameObject Orbs = GameObject.Instantiate(Bundle.LoadAsset<GameObject>("Orb Container"));
+                    Orbs.transform.SetParent(Bin.Prefab.transform);
+                    Orbs.transform.localPosition = Vector3.zero;
+                    Orbs.SetActive(false);
+
+                    BinOrbView view = Bin.Prefab.AddComponent<BinOrbView>();
+                    view.OrbContainer = Orbs;
+                }
+            };
         }
     }
 }
