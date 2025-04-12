@@ -1,5 +1,7 @@
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using Easter2025.Utilies;
 using Easter2025.Views;
 using HarmonyLib;
 using KitchenData;
@@ -18,12 +20,14 @@ namespace Easter2025
     {
         public const string MOD_GUID = "com.starfluxgames.easter2025";
         public const string MOD_NAME = "Easter 2025";
-        public const string MOD_VERSION = "0.1.0";
+        public const string MOD_VERSION = "0.0.2";
         public const string MOD_AUTHOR = "StarFluxGames";
         public const string MOD_GAMEVERSION = ">=1.2.1";
 
         internal static AssetBundle Bundle;
         internal static KitchenLogger Logger;
+
+        public static bool ENABLE_ADDITIONAL_LOBBY_DISHES = true;
 
         public Mod() : base(MOD_GUID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, MOD_GAMEVERSION, Assembly.GetExecutingAssembly())
         {
