@@ -4,12 +4,13 @@ using Easter2025.Customs.Generics;
 using Easter2025.Utilies;
 using Kitchen;
 using KitchenData;
+using KitchenLib.Customs;
 using KitchenLib.Utils;
 using UnityEngine;
 
 namespace Easter2025.Customs.Items
 {
-    public class BoiledEggPot : GenericStackableItem
+    public class BoiledEggPot : CustomItem
     {
         public override string UniqueNameID => "BoiledEggPot";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("BoiledEggPot").AssignMaterialsByNames();
