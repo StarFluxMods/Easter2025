@@ -21,6 +21,8 @@ namespace Easter2025.Utilies
         public static Item Pot => (Item)GDOUtils.GetExistingGDO(ItemReferences.Pot);
         public static Item Water => (Item)GDOUtils.GetExistingGDO(ItemReferences.Water);
         public static Item Oil => (Item)GDOUtils.GetExistingGDO(ItemReferences.Oil);
+        public static Item Dough => (Item)GDOUtils.GetExistingGDO(ItemReferences.Dough);
+        public static Item Flour => (Item)GDOUtils.GetExistingGDO(ItemReferences.Flour);
 
         #endregion
 
@@ -67,6 +69,10 @@ public static Item GreenShell => (Item)GDOUtils.GetCustomGameDataObject<GreenShe
 public static Item RawHotCrossBun => (Item)GDOUtils.GetCustomGameDataObject<RawHotCrossBun>().GameDataObject;
 public static Item RedDye => (Item)GDOUtils.GetCustomGameDataObject<RedDye>().GameDataObject;
 public static Item RedShell => (Item)GDOUtils.GetCustomGameDataObject<RedShell>().GameDataObject;
+public static Item EasterBread => (Item)GDOUtils.GetCustomGameDataObject<EasterBread>().GameDataObject;
+public static Item RedEasterBread => (Item)GDOUtils.GetCustomGameDataObject<RedEasterBread>().GameDataObject;
+public static Item GreenEasterBread => (Item)GDOUtils.GetCustomGameDataObject<GreenEasterBread>().GameDataObject;
+public static Item BlueEasterBread => (Item)GDOUtils.GetCustomGameDataObject<BlueEasterBread>().GameDataObject;
 #endregion
 
 #region ItemGroup
