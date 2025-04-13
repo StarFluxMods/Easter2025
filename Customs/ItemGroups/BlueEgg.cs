@@ -46,5 +46,11 @@ namespace Easter2025.Customs.ItemGroups
                 Max = 2
             }
         };
+
+        public override void OnRegister(ItemGroup gameDataObject)
+        {
+            base.OnRegister(gameDataObject);
+            gameDataObject.Prefab.AddComponent<ColourBlindMode>().Element = gameDataObject.Prefab.GetChild("Octagon");
+        }
     }
 }

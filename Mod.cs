@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Easter2025.Customs.Items;
 using Easter2025.Utilies;
 using Easter2025.Views;
 using HarmonyLib;
@@ -51,15 +52,41 @@ namespace Easter2025
 
             Events.BuildGameDataEvent += (sender, args) =>
             {
-                if (args.firstBuild && args.gamedata.TryGet(ApplianceReferences.Bin, out Appliance Bin))
+                if (args.firstBuild)
                 {
-                    GameObject Orbs = GameObject.Instantiate(Bundle.LoadAsset<GameObject>("Orb Container"));
-                    Orbs.transform.SetParent(Bin.Prefab.transform);
-                    Orbs.transform.localPosition = Vector3.zero;
-                    Orbs.SetActive(false);
+                    // Adding Orbs to Bin
+                    if (args.gamedata.TryGet(ApplianceReferences.Bin, out Appliance Bin))
+                    {
+                        GameObject Orbs = GameObject.Instantiate(Bundle.LoadAsset<GameObject>("Orb Container"));
+                        Orbs.transform.SetParent(Bin.Prefab.transform);
+                        Orbs.transform.localPosition = Vector3.zero;
+                        Orbs.SetActive(false);
 
-                    BinOrbView view = Bin.Prefab.AddComponent<BinOrbView>();
-                    view.OrbContainer = Orbs;
+                        BinOrbView view = Bin.Prefab.AddComponent<BinOrbView>();
+                        view.OrbContainer = Orbs;
+                    }
+
+                    // Adding Processes to Egg Mould Provider
+                    if (args.gamedata.TryGet(ApplianceReferences.Countertop, out Appliance Countertop) && args.gamedata.TryGet(GDOReferences.EggMouldProvider.ID, out Appliance EggMouldProvider))
+                    {
+                        foreach (Appliance.ApplianceProcesses process in Countertop.Processes)
+                        {
+                            bool found = false;
+                            foreach (Appliance.ApplianceProcesses process2 in EggMouldProvider.Processes)
+                            {
+                                if (process.Process == process2.Process)
+                                {
+                                    found = true;
+                                    break;
+                                }
+                            }
+
+                            if (!found)
+                            {
+                                EggMouldProvider.Processes.Add(process);
+                            }
+                        }
+                    }
                 }
             };
         }

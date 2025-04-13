@@ -1,5 +1,6 @@
 ﻿using Easter2025.Customs.Generics;
 using Easter2025.Utilies;
+using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
@@ -13,5 +14,11 @@ namespace Easter2025.Customs.Items
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("RedDye").AssignMaterialsByNames();
         public override Appliance DedicatedProvider => GDOReferences.DyeProvider;
         public override string ColourBlindTag => "R";
+
+        public override void OnRegister(Item gameDataObject)
+        {
+            base.OnRegister(gameDataObject);
+            gameDataObject.Prefab.AddComponent<ColourBlindMode>().Element = gameDataObject.Prefab.GetChild("Circle");
+        }
     }
 }

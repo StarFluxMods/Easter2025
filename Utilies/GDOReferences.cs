@@ -23,6 +23,8 @@ namespace Easter2025.Utilies
         public static Item Oil => (Item)GDOUtils.GetExistingGDO(ItemReferences.Oil);
         public static Item Dough => (Item)GDOUtils.GetExistingGDO(ItemReferences.Dough);
         public static Item Flour => (Item)GDOUtils.GetExistingGDO(ItemReferences.Flour);
+        public static Item ChocolateMelted => (Item)GDOUtils.GetExistingGDO(ItemReferences.ChocolateMelted);
+        public static Item Milk => (Item)GDOUtils.GetExistingGDO(ItemReferences.Milk);
 
         #endregion
 
@@ -37,6 +39,7 @@ namespace Easter2025.Utilies
         public static Process Chop => (Process)GDOUtils.GetExistingGDO(ProcessReferences.Chop);
         public static Process Cook => (Process)GDOUtils.GetExistingGDO(ProcessReferences.Cook);
         public static Process Clean => (Process)GDOUtils.GetExistingGDO(ProcessReferences.Clean);
+        public static Process SteepTea => (Process)GDOUtils.GetExistingGDO(ProcessReferences.SteepTea);
 
         #endregion
 
@@ -44,6 +47,11 @@ namespace Easter2025.Utilies
         
         #region Item
 public static Item BlueDye => (Item)GDOUtils.GetCustomGameDataObject<BlueDye>().GameDataObject;
+public static Item EggMould => (Item)GDOUtils.GetCustomGameDataObject<EggMould>().GameDataObject;
+public static Item PreppedEggMould => (Item)GDOUtils.GetCustomGameDataObject<PreppedEggMould>().GameDataObject;
+public static Item HalfEgg => (Item)GDOUtils.GetCustomGameDataObject<HalfEgg>().GameDataObject;
+public static Item FilledHalfEgg => (Item)GDOUtils.GetCustomGameDataObject<FilledHalfEgg>().GameDataObject;
+public static Item CremeEgg => (Item)GDOUtils.GetCustomGameDataObject<CremeEgg>().GameDataObject;
 public static Item MixedEggYolk => (Item)GDOUtils.GetCustomGameDataObject<MixedEggYolk>().GameDataObject;
 public static Item SlicedEgg => (Item)GDOUtils.GetCustomGameDataObject<SlicedEgg>().GameDataObject;
 public static Item RedSlicedEgg => (Item)GDOUtils.GetCustomGameDataObject<RedSlicedEgg>().GameDataObject;
@@ -91,6 +99,7 @@ public static Dish RecipeMayonnaise => (Dish)GDOUtils.GetCustomGameDataObject<Re
 #region Appliance
 public static Appliance DyeProvider => (Appliance)GDOUtils.GetCustomGameDataObject<DyeProvider>().GameDataObject;
 public static Appliance HotCrossBunsProvider => (Appliance)GDOUtils.GetCustomGameDataObject<HotCrossBunsProvider>().GameDataObject;
+public static Appliance EggMouldProvider => (Appliance)GDOUtils.GetCustomGameDataObject<EggMouldProvider>().GameDataObject;
 public static Dish DishDyedEggs => (Dish)GDOUtils.GetCustomGameDataObject<DishDyedEggs>().GameDataObject;
 #endregion
 
