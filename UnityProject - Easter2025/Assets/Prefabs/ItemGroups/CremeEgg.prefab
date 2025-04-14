@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6590067684951896294
+--- !u!1 &6786469201593584075
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4738094295331781521}
+  - component: {fileID: 4943802047998051004}
   m_Layer: 0
   m_Name: CremeEgg
   m_TagString: Untagged
@@ -16,27 +16,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4738094295331781521
+--- !u!4 &4943802047998051004
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6590067684951896294}
+  m_GameObject: {fileID: 6786469201593584075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3580212629673379596}
+  - {fileID: 3816103621394136609}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &279714672929522514
+--- !u!1001 &485053333110143615
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4738094295331781521}
+    m_TransformParent: {fileID: 4943802047998051004}
     m_Modifications:
     - target: {fileID: 3625054006723822686, guid: 61f9b8376e0455a43b405d6b8c9c831f, type: 3}
       propertyPath: m_RootOrder
@@ -89,11 +89,11 @@ PrefabInstance:
     - target: {fileID: 5872817696869914754, guid: 61f9b8376e0455a43b405d6b8c9c831f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 670f7cd2b83d3d945816eb6cca498edd, type: 2}
+      objectReference: {fileID: 2100000, guid: c9081fe37c53a644bab0cf992209e554, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61f9b8376e0455a43b405d6b8c9c831f, type: 3}
---- !u!4 &3580212629673379596 stripped
+--- !u!4 &3816103621394136609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3625054006723822686, guid: 61f9b8376e0455a43b405d6b8c9c831f, type: 3}
-  m_PrefabInstance: {fileID: 279714672929522514}
+  m_PrefabInstance: {fileID: 485053333110143615}
   m_PrefabAsset: {fileID: 0}

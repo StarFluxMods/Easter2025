@@ -66,24 +66,50 @@ namespace Easter2025
                         view.OrbContainer = Orbs;
                     }
 
-                    // Adding Processes to Egg Mould Provider
-                    if (args.gamedata.TryGet(ApplianceReferences.Countertop, out Appliance Countertop) && args.gamedata.TryGet(GDOReferences.EggMouldProvider.ID, out Appliance EggMouldProvider))
+                    if (args.gamedata.TryGet(ApplianceReferences.Countertop, out Appliance Countertop))
                     {
-                        foreach (Appliance.ApplianceProcesses process in Countertop.Processes)
+                        // Adding Processes to Egg Mould Provider
+                        if (args.gamedata.TryGet(GDOReferences.EggMouldProvider.ID, out Appliance EggMouldProvider))
                         {
-                            bool found = false;
-                            foreach (Appliance.ApplianceProcesses process2 in EggMouldProvider.Processes)
+                            foreach (Appliance.ApplianceProcesses process in Countertop.Processes)
                             {
-                                if (process.Process == process2.Process)
+                                bool found = false;
+                                foreach (Appliance.ApplianceProcesses process2 in EggMouldProvider.Processes)
                                 {
-                                    found = true;
-                                    break;
+                                    if (process.Process == process2.Process)
+                                    {
+                                        found = true;
+                                        break;
+                                    }
+                                }
+
+                                if (!found)
+                                {
+                                    EggMouldProvider.Processes.Add(process);
                                 }
                             }
-
-                            if (!found)
+                        }
+                        
+                        
+                        // Adding Processes to Wrapper Provider
+                        if (args.gamedata.TryGet(GDOReferences.WrapperProvider.ID, out Appliance WrapperProvider))
+                        {
+                            foreach (Appliance.ApplianceProcesses process in Countertop.Processes)
                             {
-                                EggMouldProvider.Processes.Add(process);
+                                bool found = false;
+                                foreach (Appliance.ApplianceProcesses process2 in WrapperProvider.Processes)
+                                {
+                                    if (process.Process == process2.Process)
+                                    {
+                                        found = true;
+                                        break;
+                                    }
+                                }
+
+                                if (!found)
+                                {
+                                    WrapperProvider.Processes.Add(process);
+                                }
                             }
                         }
                     }
