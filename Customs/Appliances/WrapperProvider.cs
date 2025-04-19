@@ -29,6 +29,7 @@ namespace Easter2025.Customs.Appliances
         public override bool IsPurchasable => true;
         public override PriceTier PriceTier => PriceTier.Medium;
         public override ShoppingTags ShoppingTags => ShoppingTags.Cooking | ShoppingTags.Misc;
+        public override List<(Locale, ApplianceInfo)> InfoList => CenteralLang.Appliances.WrapperProvider;
 
         public override void OnRegister(Appliance gameDataObject)
         {

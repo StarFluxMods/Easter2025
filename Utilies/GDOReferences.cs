@@ -17,6 +17,7 @@ namespace Easter2025.Utilies
         public static Item Plate => (Item)GDOUtils.GetExistingGDO(ItemReferences.Plate);
         public static Item PlateDirty => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
         public static Item Butter => (Item)GDOUtils.GetExistingGDO(ItemReferences.Butter);
+        public static Item Sugar => (Item)GDOUtils.GetExistingGDO(ItemReferences.Sugar);
         public static Item Egg => (Item)GDOUtils.GetExistingGDO(ItemReferences.Egg);
         public static Item Pot => (Item)GDOUtils.GetExistingGDO(ItemReferences.Pot);
         public static Item Water => (Item)GDOUtils.GetExistingGDO(ItemReferences.Water);
@@ -24,6 +25,7 @@ namespace Easter2025.Utilies
         public static Item Dough => (Item)GDOUtils.GetExistingGDO(ItemReferences.Dough);
         public static Item Flour => (Item)GDOUtils.GetExistingGDO(ItemReferences.Flour);
         public static Item ChocolateMelted => (Item)GDOUtils.GetExistingGDO(ItemReferences.ChocolateMelted);
+        public static Item Chocolate => (Item)GDOUtils.GetExistingGDO(ItemReferences.Chocolate);
         public static Item Milk => (Item)GDOUtils.GetExistingGDO(ItemReferences.Milk);
 
         #endregion
@@ -47,6 +49,8 @@ namespace Easter2025.Utilies
         #endregion
         
         #region Item
+public static Item CremeFilling => (Item)GDOUtils.GetCustomGameDataObject<CremeFilling>().GameDataObject;
+public static Item CookedCremeFillingPot => (Item)GDOUtils.GetCustomGameDataObject<CookedCremeFillingPot>().GameDataObject;
 public static Item BlueDye => (Item)GDOUtils.GetCustomGameDataObject<BlueDye>().GameDataObject;
 public static Item EggMould => (Item)GDOUtils.GetCustomGameDataObject<EggMould>().GameDataObject;
 public static Item PreppedEggMould => (Item)GDOUtils.GetCustomGameDataObject<PreppedEggMould>().GameDataObject;
@@ -98,6 +102,7 @@ public static ItemGroup RedDevilledEgg => (ItemGroup)GDOUtils.GetCustomGameDataO
 public static ItemGroup GreenDevilledEgg => (ItemGroup)GDOUtils.GetCustomGameDataObject<GreenDevilledEgg>().GameDataObject;
 public static ItemGroup BlueDevilledEgg => (ItemGroup)GDOUtils.GetCustomGameDataObject<BlueDevilledEgg>().GameDataObject;
 public static Dish RecipeMayonnaise => (Dish)GDOUtils.GetCustomGameDataObject<RecipeMayonnaise>().GameDataObject;
+public static Dish RecipeCremeFilling => (Dish)GDOUtils.GetCustomGameDataObject<RecipeCremeFilling>().GameDataObject;
 #endregion
 
 #region Appliance

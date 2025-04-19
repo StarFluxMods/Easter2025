@@ -20,7 +20,7 @@ namespace Easter2025.Customs.ItemGroups
                 Items = new List<Item>
                 {
                     GDOReferences.HalfEgg,
-                    GDOReferences.Milk
+                    GDOReferences.CremeFilling
                 },
                 Min = 2,
                 Max = 2
