@@ -1,4 +1,5 @@
 ﻿using Easter2025.Customs.Appliances;
+using Easter2025.Customs.Decor;
 using Easter2025.Customs.Dishes;
 using Easter2025.Customs.ItemGroups;
 using Easter2025.Customs.Items;
@@ -12,6 +13,12 @@ namespace Easter2025.Utilies
     {
         #region Vanilla
 
+        #region Appliance
+
+        public static Appliance WallpaperApplicator => (Appliance)GDOUtils.GetExistingGDO(ApplianceReferences.WallpaperApplicator);
+
+        #endregion
+        
         #region Item
 
         public static Item Plate => (Item)GDOUtils.GetExistingGDO(ItemReferences.Plate);
@@ -89,6 +96,7 @@ public static Item GreenEasterBread => (Item)GDOUtils.GetCustomGameDataObject<Gr
 public static Item BlueEasterBread => (Item)GDOUtils.GetCustomGameDataObject<BlueEasterBread>().GameDataObject;
 public static Item WrapperRoll => (Item)GDOUtils.GetCustomGameDataObject<WrapperRoll>().GameDataObject;
 public static Item Wrapper => (Item)GDOUtils.GetCustomGameDataObject<Wrapper>().GameDataObject;
+public static Decor EggWallpaper => (Decor)GDOUtils.GetCustomGameDataObject<EggWallpaper>().GameDataObject;
 #endregion
 
 #region ItemGroup
