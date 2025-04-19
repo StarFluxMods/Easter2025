@@ -40,6 +40,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 116465300194604810}
     m_Modifications:
+    - target: {fileID: 2417538108737391672, guid: 283e764d9490528469a51b28eabc642b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367609362232583461, guid: 283e764d9490528469a51b28eabc642b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8458863465089527058, guid: 283e764d9490528469a51b28eabc642b, type: 3}
       propertyPath: m_Name
       value: RedEgg
@@ -174,6 +182,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueEgg
       objectReference: {fileID: 0}
+    - target: {fileID: 4482943901383866225, guid: 2598935b255d2f74b89be65526f8a775, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276554216227290657, guid: 2598935b255d2f74b89be65526f8a775, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2598935b255d2f74b89be65526f8a775, type: 3}
 --- !u!4 &2251996152784004852 stripped
@@ -188,6 +204,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 116465300194604810}
     m_Modifications:
+    - target: {fileID: 3111174075428600929, guid: 9777a2813a0bfb341a80a614361736ec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017359485623485121, guid: 9777a2813a0bfb341a80a614361736ec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8411286725463633441, guid: 9777a2813a0bfb341a80a614361736ec, type: 3}
       propertyPath: m_Name
       value: GreenEgg

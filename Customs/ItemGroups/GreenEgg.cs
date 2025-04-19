@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Easter2025.Customs.Generics;
 using Easter2025.Utilies;
+using Easter2025.Views;
 using Kitchen;
 using KitchenData;
 using KitchenLib.Utils;
@@ -51,6 +52,10 @@ namespace Easter2025.Customs.ItemGroups
         {
             base.OnRegister(gameDataObject);
             gameDataObject.Prefab.AddComponent<ColourBlindMode>().Element = gameDataObject.Prefab.GetChild("Square");
+            TootieEggs tootieEggsView = gameDataObject.Prefab.AddComponent<TootieEggs>();
+            tootieEggsView.TootieEgg = gameDataObject.Prefab.GetChild("TootieEgg");
+            tootieEggsView.NormalEgg = gameDataObject.Prefab.GetChild("Egg_1");
+            gameDataObject.Prefab.GetChild("TootieEgg").SetActive(false);
         }
     }
 }
