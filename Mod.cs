@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Easter2025.Customs.Items;
+using Easter2025.Customs.RestaurantSettings;
 using Easter2025.Utilies;
 using Easter2025.Views;
 using HarmonyLib;
@@ -11,6 +12,7 @@ using KitchenLib.Event;
 using KitchenLib.Interfaces;
 using KitchenLib.Logging.Exceptions;
 using KitchenLib.References;
+using KitchenLib.Utils;
 using KitchenMods;
 using UnityEngine;
 using KitchenLogger = KitchenLib.Logging.KitchenLogger;
@@ -54,6 +56,12 @@ namespace Easter2025
             {
                 if (args.firstBuild)
                 {
+                    // Adding Orbs to Bin
+                    if (args.gamedata.TryGet(PlayerCosmeticReferences.BunnyEarHat, out PlayerCosmetic BunnyEarHat))
+                    {
+                        BunnyEarHat.CustomerSettings.Add((RestaurantSetting)GDOUtils.GetCustomGameDataObject<Easter2025GardenSetting>().GameDataObject);
+                        BunnyEarHat.CustomerSettings.Add((RestaurantSetting)GDOUtils.GetCustomGameDataObject<Easter2025Setting>().GameDataObject);
+                    }
                     // Adding Orbs to Bin
                     if (args.gamedata.TryGet(ApplianceReferences.Bin, out Appliance Bin))
                     {
