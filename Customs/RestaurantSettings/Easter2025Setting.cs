@@ -1,11 +1,12 @@
 ﻿using CustomSettingsAndLayouts;
 using System.Collections.Generic;
+using Easter2025.Utilies;
 using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using UnityEngine;
+using TwitchLib.Api.Helix.Models.Entitlements.GetDropsEntitlements;
 
 namespace Easter2025.Customs.RestaurantSettings
 {
@@ -18,8 +19,8 @@ namespace Easter2025.Customs.RestaurantSettings
         {
             new CountrysideDecorator.DecorationsConfiguration
             {
-                Cobblestone = (Appliance)GDOUtils.GetExistingGDO(ApplianceReferences.Cobblestone),
-                Ground = (Appliance)GDOUtils.GetExistingGDO(ApplianceReferences.CountrysideGround),
+                Cobblestone = GDOReferences.EggCobblestone,
+                Ground = GDOReferences.EasterGround,
                 FrontBorder = (Appliance)GDOUtils.GetExistingGDO(ApplianceReferences.LogWall),
                 BorderSpacing = 1,
                 Scatters = new List<CountrysideDecorator.DecorationsConfiguration.Scatter>
@@ -31,7 +32,7 @@ namespace Easter2025.Customs.RestaurantSettings
                     },
                     new CountrysideDecorator.DecorationsConfiguration.Scatter
                     {
-                        Appliance = (Appliance)GDOUtils.GetExistingGDO(ApplianceReferences.Rock),
+                        Appliance = GDOReferences.EggPile,
                         Probability = 0.1f
                     }
                 }
@@ -44,13 +45,7 @@ namespace Easter2025.Customs.RestaurantSettings
         // public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("EasterSnowglobe").AssignMaterialsByNames();
         public override bool AlwaysLight => true;
 
-        public override List<(Locale, BasicInfo)> InfoList => new List<(Locale, BasicInfo)>
-        {
-            (Locale.English, new BasicInfo
-            {
-                Name = "Easter 2025"
-            })
-        };
+        public override List<(Locale, BasicInfo)> InfoList => CenteralLang.RestaurantSettings.Easter2025Setting;
 
 
         public override void OnRegister(RestaurantSetting gameDataObject)
