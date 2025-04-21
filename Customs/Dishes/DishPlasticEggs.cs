@@ -46,8 +46,8 @@ namespace Easter2025.Customs.Dishes
 
         public override bool IsUnlockable => false;
         
-        public override List<(Locale, UnlockInfo)> InfoList => CenteralLang.Unlocks.HotCrossBuns;
+        public override List<(Locale, UnlockInfo)> InfoList => CenteralLang.Unlocks.PlasticEggs;
 
-        public override Dictionary<Locale, string> Recipe => CenteralLang.Recipes.HotCrossBuns;
+        public override Dictionary<Locale, string> Recipe => CenteralLang.Recipes.PlasticEggs;
     }
 }

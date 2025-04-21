@@ -233,6 +233,23 @@ namespace Easter2025.Utilies
                 { Locale.Korean, "달걀을 깨서 기름과 섞습니다." },
                 { Locale.Turkish, "Bir yumurta kırın ve yağ ile karıştırın." },
             };
+
+            public static Dictionary<Locale, string> PlasticEggs => new Dictionary<Locale, string>
+            {
+                { Locale.Default, "Once a customer orders an egg, you can search some bushes to find it!" },
+                { Locale.English, "Once a customer orders an egg, you can search some bushes to find it!" },
+                { Locale.BlankText, "" },
+                { Locale.French, "Une fois qu'un client a commandé un œuf, vous pouvez chercher dans les buissons pour le trouver !" },
+                { Locale.German, "Sobald ein Kunde ein Ei bestellt, kannst du es in den Büschen suchen!" },
+                { Locale.Spanish, "Cuando un cliente pida un huevo, ¡podrás buscarlo entre los arbustos!" },
+                { Locale.Polish, "Gdy klient zamówi jajko, możesz przeszukać krzaki, aby je znaleźć!" },
+                { Locale.Russian, "Как только клиент закажет яйцо, вы сможете обыскать кусты, чтобы найти его!" },
+                { Locale.PortugueseBrazil, "Quando um cliente pede um ovo, você pode procurar em alguns arbustos para encontrá-lo!" },
+                { Locale.Japanese, "客が卵を注文したら、茂みを探して卵を見つけることができる！" },
+                { Locale.ChineseSimplified, "一旦顾客订购了鸡蛋，您就可以在灌木丛中寻找！" },
+                { Locale.Korean, "고객이 달걀을 주문하면 수풀을 검색하여 달걀을 찾을 수 있습니다!" },
+                { Locale.Turkish, "Bir müşteri bir yumurta sipariş ettiğinde, onu bulmak için bazı çalıları arayabilirsiniz!" },
+            };
         }
 
         public static class Unlocks
@@ -354,6 +371,23 @@ namespace Easter2025.Utilies
                 (Locale.ChineseSimplified, new UnlockInfo { Name = "热十字包", Description = "添加热十字包作为开胃菜", FlavourText = "复活节柔和而粘稠的颂歌。" }),
                 (Locale.Korean, new UnlockInfo { Name = "핫 크로스 번", Description = "핫 크로스 번을 스타터로 추가합니다.", FlavourText = "부활절의 부드럽고 끈적끈적한 찬송가." }),
                 (Locale.Turkish, new UnlockInfo { Name = "Sıcak Çörekler", Description = "Başlangıç Olarak Sıcak Çörekler Ekler", FlavourText = "Paskalya'nın yumuşak ve yapışkan marşı." }),
+            };
+
+            public static List<(Locale, UnlockInfo)> PlasticEggs => new List<(Locale, UnlockInfo)>
+            {
+                (Locale.Default, new UnlockInfo { Name = "Easter Egg Hunt", Description = "Adds Plastic Eggs as a Starter", FlavourText = "A game of hide-and-sweet." }),
+                (Locale.English, new UnlockInfo { Name = "Easter Egg Hunt", Description = "Adds Plastic Eggs as a Starter", FlavourText = "A game of hide-and-sweet." }),
+                (Locale.BlankText, new UnlockInfo { Name = "", Description = "", FlavourText = "" }),
+                (Locale.French, new UnlockInfo { Name = "Chasse aux œufs de Pâques", Description = "Ajoute des œufs en plastique en guise d'amorce", FlavourText = "Un jeu de cache-cache." }),
+                (Locale.German, new UnlockInfo { Name = "Ostereiersuche", Description = "Fügt Plastik-Eier als Starter hinzu", FlavourText = "Ein Versteckspiel mit Süßigkeiten." }),
+                (Locale.Spanish, new UnlockInfo { Name = "Caza del huevo de Pascua", Description = "Añade huevos de plástico como entrante", FlavourText = "Un juego de escondite." }),
+                (Locale.Polish, new UnlockInfo { Name = "Wielkanocne polowanie na jajka", Description = "Dodaje plastikowe jajka jako starter", FlavourText = "Gra w chowanego." }),
+                (Locale.Russian, new UnlockInfo { Name = "Охота за пасхальными яйцами", Description = "Добавляет пластиковые яйца в качестве стартера", FlavourText = "Игра в прятки." }),
+                (Locale.PortugueseBrazil, new UnlockInfo { Name = "Caça aos ovos de Páscoa", Description = "Adiciona ovos de plástico como entrada", FlavourText = "Um jogo de esconde-esconde." }),
+                (Locale.Japanese, new UnlockInfo { Name = "イースター・エッグ・ハント", Description = "プラスチック卵をスターターとして加える", FlavourText = "かくれんぼだ。" }),
+                (Locale.ChineseSimplified, new UnlockInfo { Name = "复活节寻蛋活动", Description = "添加塑料蛋作为启动器", FlavourText = "捉迷藏的游戏" }),
+                (Locale.Korean, new UnlockInfo { Name = "이스터 에그 헌트", Description = "플라스틱 달걀을 스타터로 추가합니다.", FlavourText = "숨바꼭질 게임." }),
+                (Locale.Turkish, new UnlockInfo { Name = "Paskalya Yumurtası Avı", Description = "Plastik Yumurtaları Başlangıç Olarak Ekler", FlavourText = "Bir saklambaç oyunu." }),
             };
         }
     }
