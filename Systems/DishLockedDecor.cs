@@ -6,6 +6,7 @@ using KitchenData;
 using KitchenMods;
 using Unity.Collections;
 using Unity.Entities;
+using UnityEngine;
 
 
 namespace Easter2025.Systems
@@ -32,6 +33,7 @@ namespace Easter2025.Systems
 
         protected override void OnUpdate()
         {
+
             foreach (Decor decor in Decor.Keys.SelectMany(id => Decor[id]))
             {
                 decor.IsAvailable = false;

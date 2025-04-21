@@ -1,4 +1,5 @@
-﻿using Easter2025.Customs.Generics;
+﻿using System.Collections.Generic;
+using Easter2025.Customs.Generics;
 using Easter2025.Views.Local;
 using KitchenData;
 using KitchenLib.Utils;
@@ -16,9 +17,12 @@ namespace Easter2025.Customs.Appliances.SceneAppliances
         {
             base.OnRegister(gameDataObject);
             EggPileView eggPileView = gameDataObject.Prefab.AddComponent<EggPileView>();
-            eggPileView.Egg1 = gameDataObject.Prefab.GetChild("EggContainer/Egg_1");
-            eggPileView.Egg2 = gameDataObject.Prefab.GetChild("EggContainer/Egg_2");
-            eggPileView.Egg3 = gameDataObject.Prefab.GetChild("EggContainer/Egg_3");
+            eggPileView.EggContainers = new List<GameObject>
+            {
+                gameDataObject.Prefab.GetChild("EggContainer/Egg_1"),
+                gameDataObject.Prefab.GetChild("EggContainer/Egg_2"),
+                gameDataObject.Prefab.GetChild("EggContainer/Egg_3"),
+            };
             
             RandomRotationView randomRotationView = gameDataObject.Prefab.AddComponent<RandomRotationView>();
             randomRotationView.Container = gameDataObject.Prefab.GetChild("EggContainer");

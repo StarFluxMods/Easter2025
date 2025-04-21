@@ -172,6 +172,7 @@ namespace Easter2025.Utilies
         public static Appliance EasterGround => (Appliance)GDOUtils.GetCustomGameDataObject<EasterGround>().GameDataObject;
         public static Appliance EggCobblestone => (Appliance)GDOUtils.GetCustomGameDataObject<EggCobblestone>().GameDataObject;
         public static Appliance EggPile => (Appliance)GDOUtils.GetCustomGameDataObject<EggPile>().GameDataObject;
+        public static Appliance EasterTree => (Appliance)GDOUtils.GetCustomGameDataObject<EasterTree>().GameDataObject;
 
         #endregion
     }

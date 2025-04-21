@@ -1,5 +1,6 @@
 ﻿using CustomSettingsAndLayouts;
 using System.Collections.Generic;
+using Easter2025.Customs.RestaurantSettings.Decorators;
 using Easter2025.Utilies;
 using Kitchen;
 using KitchenData;
@@ -17,23 +18,22 @@ namespace Easter2025.Customs.RestaurantSettings
 
         public override List<IDecorationConfiguration> Decorators => new List<IDecorationConfiguration>
         {
-            new CountrysideDecorator.DecorationsConfiguration
+            new EasterDecorator.DecorationsConfiguration
             {
                 Cobblestone = GDOReferences.EggCobblestone,
                 Ground = GDOReferences.EasterGround,
-                FrontBorder = (Appliance)GDOUtils.GetExistingGDO(ApplianceReferences.LogWall),
                 BorderSpacing = 1,
-                Scatters = new List<CountrysideDecorator.DecorationsConfiguration.Scatter>
+                Scatters = new List<EasterDecorator.DecorationsConfiguration.Scatter>
                 {
-                    new CountrysideDecorator.DecorationsConfiguration.Scatter
+                    new()
                     {
-                        Appliance = (Appliance)GDOUtils.GetExistingGDO(ApplianceReferences.Tree),
-                        Probability = 0.35f
+                        Appliance = GDOReferences.EasterTree,
+                        Probability = 0.05f
                     },
-                    new CountrysideDecorator.DecorationsConfiguration.Scatter
+                    new()
                     {
                         Appliance = GDOReferences.EggPile,
-                        Probability = 0.1f
+                        Probability = 0.05f
                     }
                 }
             }

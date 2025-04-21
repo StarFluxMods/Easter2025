@@ -6,6 +6,7 @@ using Easter2025.Customs.RestaurantSettings;
 using Easter2025.Utilies;
 using Easter2025.Views;
 using HarmonyLib;
+using Kitchen;
 using KitchenData;
 using KitchenLib;
 using KitchenLib.Event;
@@ -29,6 +30,10 @@ namespace Easter2025
 
         internal static AssetBundle Bundle;
         internal static KitchenLogger Logger;
+
+        internal static ViewType RED_BUNNY_VIEW = (ViewType)VariousUtils.GetID("RED_BUNNY_VIEW");
+        internal static ViewType GREEN_BUNNY_VIEW = (ViewType)VariousUtils.GetID("GREEN_BUNNY_VIEW");
+        internal static ViewType BLUE_BUNNY_VIEW = (ViewType)VariousUtils.GetID("BLUE_BUNNY_VIEW");
 
         public static bool ENABLE_ADDITIONAL_LOBBY_DISHES = true;
 
