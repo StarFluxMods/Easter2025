@@ -24,7 +24,7 @@ namespace Easter2025
     {
         public const string MOD_GUID = "com.starfluxgames.easter2025";
         public const string MOD_NAME = "Easter 2025";
-        public const string MOD_VERSION = "0.0.2";
+        public const string MOD_VERSION = "0.0.3";
         public const string MOD_AUTHOR = "StarFluxGames";
         public const string MOD_GAMEVERSION = ">=1.2.1";
 
