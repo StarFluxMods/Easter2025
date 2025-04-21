@@ -39,8 +39,6 @@ namespace Easter2025.Customs.Dishes
 
         public override GameObject IconPrefab => Mod.Bundle.LoadAsset<GameObject>("HotCrossBunIcon").AssignMaterialsByNames();
 
-        public override bool IsMainThatDoesNotNeedPlates => true;
-
         public override List<Dish.MenuItem> ResultingMenuItems => new()
         {
             new Dish.MenuItem

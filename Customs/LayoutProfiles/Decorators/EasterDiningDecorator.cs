@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Easter2025.Utilies;
 using Kitchen;
 using Kitchen.Layouts;
 using KitchenLib.References;
@@ -29,7 +30,7 @@ namespace Easter2025.Customs.LayoutProfiles.Decorators
                             bushesToAdd.Add(new CLayoutAppliancePlacement
                             {
                                 Position = result,
-                                Appliance = ApplianceReferences.Beehive,
+                                Appliance = GDOReferences.Bush.ID,
                                 Rotation = Quaternion.identity
                             });
                             used_positions.Add(result);
