@@ -12,9 +12,12 @@ namespace Easter2025.Customs.Items
         public override string UniqueNameID => "PinkPlasticEgg";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("PinkPlasticEgg").AssignMaterialsByNames();
         public override string ColourBlindTag => "P";
+        public override ItemValue ItemValue => ItemValue.SideSmall;
+
         public override List<IItemProperty> Properties => new List<IItemProperty>
         {
-            new CHidableItem()
+            new CHidableItem(),
+            new CEggBasket.CanPlaceInBasket()
         };
     }
 }

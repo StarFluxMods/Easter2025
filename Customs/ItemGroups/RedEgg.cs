@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Easter2025.Components;
 using Easter2025.Customs.Generics;
 using Easter2025.Utilies;
 using Easter2025.Views;
@@ -30,6 +31,10 @@ namespace Easter2025.Customs.ItemGroups
                 Duration = 1,
                 Result = GDOReferences.RedSlicedEgg
             }
+        };
+        public override List<IItemProperty> Properties => new List<IItemProperty>
+        {
+            new CEggBasket.CanPlaceInBasket()
         };
 
         public override ItemValue ItemValue => ItemValue.SideMedium;

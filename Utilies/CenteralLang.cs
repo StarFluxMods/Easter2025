@@ -44,6 +44,54 @@ namespace Easter2025.Utilies
 
         public static class Appliances
         {
+            public static List<(Locale, ApplianceInfo)> EggBasketProvider => new List<(Locale, ApplianceInfo)>
+            {
+                (Locale.Default, new ApplianceInfo{Name = "Egg Basket", Description = "Provides an Egg Basket"}),
+                (Locale.English, new ApplianceInfo{Name = "Egg Basket", Description = "Provides an Egg Basket"}),
+                (Locale.BlankText, new ApplianceInfo{Name = "", Description = ""}),
+                (Locale.French, new ApplianceInfo{Name = "Panier à œufs", Description = "Fournit un panier à œufs"}),
+                (Locale.German, new ApplianceInfo{Name = "Eierkorb", Description = "Bietet einen Eierkorb"}),
+                (Locale.Spanish, new ApplianceInfo{Name = "Cesta de huevos", Description = "Proporciona una cesta de huevos"}),
+                (Locale.Polish, new ApplianceInfo{Name = "Koszyk na jajka", Description = "Zapewnia koszyk na jajka"}),
+                (Locale.Russian, new ApplianceInfo{Name = "Корзина для яиц", Description = "Предоставляет корзину для яиц"}),
+                (Locale.PortugueseBrazil, new ApplianceInfo{Name = "Cesta de ovos", Description = "Fornece uma cesta de ovos"}),
+                (Locale.Japanese, new ApplianceInfo{Name = "エッグバスケット", Description = "エッグバスケットを提供"}),
+                (Locale.ChineseSimplified, new ApplianceInfo{Name = "蛋篮", Description = "提供一个蛋篮"}),
+                (Locale.Korean, new ApplianceInfo{Name = "달걀 바구니", Description = "달걀 바구니 제공"}),
+                (Locale.Turkish, new ApplianceInfo{Name = "Yumurta Sepeti", Description = "Bir Yumurta Sepeti Sağlar"}),
+            };
+            public static List<(Locale, ApplianceInfo)> MountedCarrots => new List<(Locale, ApplianceInfo)>
+            {
+                (Locale.Default, new ApplianceInfo{Name = "Mounted Carrots", Description = "They’re not just for rabbits anymore."}),
+                (Locale.English, new ApplianceInfo{Name = "Mounted Carrots", Description = "They’re not just for rabbits anymore."}),
+                (Locale.BlankText, new ApplianceInfo{Name = "", Description = ""}),
+                (Locale.French, new ApplianceInfo{Name = "Carottes montées", Description = "Ils ne sont plus réservés aux lapins."}),
+                (Locale.German, new ApplianceInfo{Name = "Montierte Möhren", Description = "Sie sind nicht mehr nur für Kaninchen."}),
+                (Locale.Spanish, new ApplianceInfo{Name = "Zanahorias montadas", Description = "Ya no son sólo para conejos."}),
+                (Locale.Polish, new ApplianceInfo{Name = "Zamontowane marchewki", Description = "Nie są już tylko dla królików."}),
+                (Locale.Russian, new ApplianceInfo{Name = "Морковь в горах", Description = "Они теперь не только для кроликов."}),
+                (Locale.PortugueseBrazil, new ApplianceInfo{Name = "Cenouras montadas", Description = "Eles não são mais apenas para coelhos."}),
+                (Locale.Japanese, new ApplianceInfo{Name = "マウント・キャロット", Description = "もうウサギだけのものではないのだ。"}),
+                (Locale.ChineseSimplified, new ApplianceInfo{Name = "安装胡萝卜", Description = "它们不再是兔子的专利。"}),
+                (Locale.Korean, new ApplianceInfo{Name = "마운트 당근", Description = "더 이상 토끼만 위한 것이 아닙니다."}),
+                (Locale.Turkish, new ApplianceInfo{Name = "Atlı Havuçlar", Description = "Artık sadece tavşanlar için değiller."}),
+            };
+            public static List<(Locale, ApplianceInfo)> GrassBunny => new List<(Locale, ApplianceInfo)>
+            {
+                (Locale.Default, new ApplianceInfo{Name = "Grass Bunny", Description = "Hops in style, never eats the lawn."}),
+                (Locale.English, new ApplianceInfo{Name = "Grass Bunny", Description = "Hops in style, never eats the lawn."}),
+                (Locale.BlankText, new ApplianceInfo{Name = "", Description = ""}),
+                (Locale.French, new ApplianceInfo{Name = "Lapin d'herbe", Description = "Il sautille avec style et ne mange jamais la pelouse."}),
+                (Locale.German, new ApplianceInfo{Name = "Grashäschen", Description = "Hopfen mit Stil, frisst nie den Rasen."}),
+                (Locale.Spanish, new ApplianceInfo{Name = "Conejito de hierba", Description = "Lúpulo con estilo, nunca se come el césped."}),
+                (Locale.Polish, new ApplianceInfo{Name = "Grass Bunny", Description = "Chmiel w dobrym stylu, nigdy nie zjada trawnika."}),
+                (Locale.Russian, new ApplianceInfo{Name = "Травяной кролик", Description = "Стильный хмель, никогда не съедает газон."}),
+                (Locale.PortugueseBrazil, new ApplianceInfo{Name = "Coelhinho da grama", Description = "Salta com estilo, nunca come o gramado."}),
+                (Locale.Japanese, new ApplianceInfo{Name = "グラスバニー", Description = "スタイリッシュにホップし、決して芝生を食べない。"}),
+                (Locale.ChineseSimplified, new ApplianceInfo{Name = "草兔", Description = "跳得有模有样，从不吃草坪。"}),
+                (Locale.Korean, new ApplianceInfo{Name = "잔디 토끼", Description = "스타일리시한 홉은 잔디를 먹지 않습니다."}),
+                (Locale.Turkish, new ApplianceInfo{Name = "Çim Tavşanı", Description = "Şerbetçiotu tarzında, asla çimleri yemez."}),
+            };
             public static List<(Locale, ApplianceInfo)> HotCrossBunsProvider => new List<(Locale, ApplianceInfo)>
             {
                 (Locale.Default, new ApplianceInfo { Name = "Hot Cross Buns", Description = "Provides Hot Cross Buns" }),

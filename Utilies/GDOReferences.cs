@@ -1,4 +1,5 @@
 ﻿using Easter2025.Customs.Appliances;
+using Easter2025.Customs.Appliances.Decorations;
 using Easter2025.Customs.Appliances.SceneAppliances;
 using Easter2025.Customs.Decor;
 using Easter2025.Customs.Dishes;
@@ -96,6 +97,7 @@ public static Item CutFlamingHotCrossBun => (Item)GDOUtils.GetCustomGameDataObje
 public static Item CutRawHotCrossBun => (Item)GDOUtils.GetCustomGameDataObject<CutRawHotCrossBun>().GameDataObject;
 public static Item DeYolkedSlicedEgg => (Item)GDOUtils.GetCustomGameDataObject<DeYolkedSlicedEgg>().GameDataObject;
 public static Item EasterBread => (Item)GDOUtils.GetCustomGameDataObject<EasterBread>().GameDataObject;
+public static Item EggBasket => (Item)GDOUtils.GetCustomGameDataObject<EggBasket>().GameDataObject;
 public static Item EggMould => (Item)GDOUtils.GetCustomGameDataObject<EggMould>().GameDataObject;
 public static Item EggYolk => (Item)GDOUtils.GetCustomGameDataObject<EggYolk>().GameDataObject;
 public static Item FlamingHotCrossBun => (Item)GDOUtils.GetCustomGameDataObject<FlamingHotCrossBun>().GameDataObject;
@@ -149,17 +151,19 @@ public static Dish DishDevilledEggs => (Dish)GDOUtils.GetCustomGameDataObject<Di
 public static Dish DishDyedEggs => (Dish)GDOUtils.GetCustomGameDataObject<DishDyedEggs>().GameDataObject;
 public static Dish DishEasterBread => (Dish)GDOUtils.GetCustomGameDataObject<DishEasterBread>().GameDataObject;
 public static Dish DishHotCrossBun => (Dish)GDOUtils.GetCustomGameDataObject<DishHotCrossBun>().GameDataObject;
+public static Dish DishPlasticEggs => (Dish)GDOUtils.GetCustomGameDataObject<DishPlasticEggs>().GameDataObject;
 public static Dish RecipeCremeFilling => (Dish)GDOUtils.GetCustomGameDataObject<RecipeCremeFilling>().GameDataObject;
 public static Dish RecipeMayonnaise => (Dish)GDOUtils.GetCustomGameDataObject<RecipeMayonnaise>().GameDataObject;
-public static Dish DishPlasticEggs => (Dish)GDOUtils.GetCustomGameDataObject<DishPlasticEggs>().GameDataObject;
 #endregion
 
 #region Decor
 public static Decor EggWallpaper => (Decor)GDOUtils.GetCustomGameDataObject<EggWallpaper>().GameDataObject;
+public static Decor GalaxyEggsWallpaper => (Decor)GDOUtils.GetCustomGameDataObject<GalaxyEggsWallpaper>().GameDataObject;
 #endregion
 
 #region Appliance
 public static Appliance DyeProvider => (Appliance)GDOUtils.GetCustomGameDataObject<DyeProvider>().GameDataObject;
+public static Appliance EggBasketProvider => (Appliance)GDOUtils.GetCustomGameDataObject<EggBasketProvider>().GameDataObject;
 public static Appliance EggMouldProvider => (Appliance)GDOUtils.GetCustomGameDataObject<EggMouldProvider>().GameDataObject;
 public static Appliance HotCrossBunsProvider => (Appliance)GDOUtils.GetCustomGameDataObject<HotCrossBunsProvider>().GameDataObject;
 public static Appliance WrapperProvider => (Appliance)GDOUtils.GetCustomGameDataObject<WrapperProvider>().GameDataObject;
@@ -168,7 +172,11 @@ public static Appliance EasterGround => (Appliance)GDOUtils.GetCustomGameDataObj
 public static Appliance EasterTree => (Appliance)GDOUtils.GetCustomGameDataObject<EasterTree>().GameDataObject;
 public static Appliance EggCobblestone => (Appliance)GDOUtils.GetCustomGameDataObject<EggCobblestone>().GameDataObject;
 public static Appliance EggPile => (Appliance)GDOUtils.GetCustomGameDataObject<EggPile>().GameDataObject;
+public static Appliance GrassBunny => (Appliance)GDOUtils.GetCustomGameDataObject<GrassBunny>().GameDataObject;
+public static Appliance MountedCarrots => (Appliance)GDOUtils.GetCustomGameDataObject<MountedCarrots>().GameDataObject;
 #endregion
+
+
 
 
     }

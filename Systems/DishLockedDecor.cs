@@ -26,7 +26,8 @@ namespace Easter2025.Systems
             {
                 GDOReferences.DishDyedEggs.ID, new List<Decor>
                 {
-                    GDOReferences.EggWallpaper
+                    GDOReferences.EggWallpaper,
+                    GDOReferences.GalaxyEggsWallpaper,
                 }
             }
         };

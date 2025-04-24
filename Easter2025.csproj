@@ -29,5 +29,6 @@
     <ItemGroup>
         <Publicize Include="KitchenMode:Kitchen.LimitedItemSourceView.Items" />
         <Publicize Include="Kitchen.Common:Kitchen.CItemProvider.Item" />
+        <Publicize Include="Kitchen.Common:Kitchen.ItemVariableStorageView.Storage" />
     </ItemGroup>
 </Project>

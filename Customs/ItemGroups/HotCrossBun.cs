@@ -26,6 +26,7 @@ namespace Easter2025.Customs.ItemGroups
                 Max = 2
             }
         };
+        public override ItemValue ItemValue => ItemValue.Small;
 
         public override void OnRegister(ItemGroup gameDataObject)
         {

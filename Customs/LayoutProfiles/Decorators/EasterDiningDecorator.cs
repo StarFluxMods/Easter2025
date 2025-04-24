@@ -34,6 +34,10 @@ namespace Easter2025.Customs.LayoutProfiles.Decorators
                                 Rotation = Quaternion.identity
                             });
                             used_positions.Add(result);
+                            foreach (LayoutPosition position in LayoutHelpers.AllNearby)
+                            {
+                                used_positions.Add(result + position);
+                            }
                         }
                     }
                     else
@@ -47,6 +51,10 @@ namespace Easter2025.Customs.LayoutProfiles.Decorators
                                 Rotation = Quaternion.identity
                             });
                             used_positions.Add(result);
+                            foreach (LayoutPosition position in LayoutHelpers.AllNearby)
+                            {
+                                used_positions.Add(result + position);
+                            }
                         }
                     }
                 }

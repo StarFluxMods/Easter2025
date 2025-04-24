@@ -11,6 +11,7 @@ namespace Easter2025.Customs.Items
     {
         public override string UniqueNameID => "EasterBread";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("EasterBread").AssignMaterialsByNames();
+        public override ItemValue ItemValue => ItemValue.Small;
 
         public override List<Item> SatisfiedBy => new List<Item>
         {
