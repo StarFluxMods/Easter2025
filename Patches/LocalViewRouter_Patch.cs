@@ -26,8 +26,8 @@ namespace Easter2025.Patches
             if (result == null)
             {
                 result = GameObject.Instantiate(Mod.Bundle.LoadAsset<GameObject>("RedBunny").AssignMaterialsByNames(), container.transform);
-                BunnyView bunnyView = result.AddComponent<BunnyView>();
-                bunnyView.GenericAnimator = result.GetChild("Container/Bunny").GetComponent<Animator>();
+                BunnyEasterEggView bunnyEasterEggView = result.AddComponent<BunnyEasterEggView>();
+                bunnyEasterEggView.GenericAnimator = result.GetChild("Container/Bunny").GetComponent<Animator>();
             }
 
             __result = result;

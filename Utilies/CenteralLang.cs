@@ -44,6 +44,22 @@ namespace Easter2025.Utilies
 
         public static class Appliances
         {
+            public static List<(Locale, ApplianceInfo)> GenerousBunnies => new List<(Locale, ApplianceInfo)>
+            {
+                (Locale.Default, new ApplianceInfo{Name = "Generous Bunnies", Description = ""}),
+                (Locale.English, new ApplianceInfo{Name = "Generous Bunnies", Description = ""}),
+                (Locale.BlankText, new ApplianceInfo{Name = "", Description = ""}),
+                (Locale.French, new ApplianceInfo{Name = "Lapins généreux", Description = ""}),
+                (Locale.German, new ApplianceInfo{Name = "Großzügige Häschen", Description = ""}),
+                (Locale.Spanish, new ApplianceInfo{Name = "Conejitos generosos", Description = ""}),
+                (Locale.Polish, new ApplianceInfo{Name = "Hojne króliczki", Description = ""}),
+                (Locale.Russian, new ApplianceInfo{Name = "Щедрые кролики", Description = ""}),
+                (Locale.PortugueseBrazil, new ApplianceInfo{Name = "Coelhinhos generosos", Description = ""}),
+                (Locale.Japanese, new ApplianceInfo{Name = "寛大なウサギたち", Description = ""}),
+                (Locale.ChineseSimplified, new ApplianceInfo{Name = "慷慨的兔子", Description = ""}),
+                (Locale.Korean, new ApplianceInfo{Name = "넉넉한 토끼", Description = ""}),
+                (Locale.Turkish, new ApplianceInfo{Name = "Cömert Tavşanlar", Description = ""}),
+            };
             public static List<(Locale, ApplianceInfo)> EggBasketProvider => new List<(Locale, ApplianceInfo)>
             {
                 (Locale.Default, new ApplianceInfo{Name = "Egg Basket", Description = "Provides an Egg Basket"}),

@@ -37,7 +37,8 @@ namespace Easter2025.Views
                     
                     SendUpdate(view, new ViewData
                     {
-                        ShouldShowOrbs = Has<CHasOrbs>(entity)
+                        ShouldShowGreenOrbs = Has<CHasOrbs>(entity) && !Has<CHasOrangeOrbs>(entity),
+                        ShouldShowOrangeOrbs = Has<CHasOrbs>(entity) && Has<CHasOrangeOrbs>(entity)
                     });
                 }
             }
@@ -46,21 +47,24 @@ namespace Easter2025.Views
         [MessagePackObject(false)]
         public struct ViewData : ISpecificViewData, IViewData.ICheckForChanges<ViewData>
         {
-            [Key(0)] public bool ShouldShowOrbs;
+            [Key(0)] public bool ShouldShowGreenOrbs;
+            [Key(2)] public bool ShouldShowOrangeOrbs;
 
             public IUpdatableObject GetRelevantSubview(IObjectView view) => view.GetSubView<BinOrbView>();
 
             public bool IsChangedFrom(ViewData cached)
             {
-                return ShouldShowOrbs != cached.ShouldShowOrbs;
+                return ShouldShowGreenOrbs != cached.ShouldShowGreenOrbs || ShouldShowOrangeOrbs != cached.ShouldShowOrangeOrbs;
             }
         }
 
-        public GameObject OrbContainer;
+        public GameObject GreenOrbs;
+        public GameObject OrangeOrbs;
 
         protected override void UpdateData(ViewData view_data)
         {
-            OrbContainer.SetActive(view_data.ShouldShowOrbs);
+            GreenOrbs.SetActive(view_data.ShouldShowGreenOrbs);
+            OrangeOrbs.SetActive(view_data.ShouldShowOrangeOrbs);
         }
     }
 }

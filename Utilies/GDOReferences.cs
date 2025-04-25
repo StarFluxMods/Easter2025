@@ -162,6 +162,7 @@ public static Decor GalaxyEggsWallpaper => (Decor)GDOUtils.GetCustomGameDataObje
 #endregion
 
 #region Appliance
+public static Appliance GenerousBunnies => (Appliance)GDOUtils.GetCustomGameDataObject<GenerousBunnies>().GameDataObject;
 public static Appliance DyeProvider => (Appliance)GDOUtils.GetCustomGameDataObject<DyeProvider>().GameDataObject;
 public static Appliance EggBasketProvider => (Appliance)GDOUtils.GetCustomGameDataObject<EggBasketProvider>().GameDataObject;
 public static Appliance EggMouldProvider => (Appliance)GDOUtils.GetCustomGameDataObject<EggMouldProvider>().GameDataObject;

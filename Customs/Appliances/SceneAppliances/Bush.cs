@@ -2,6 +2,7 @@
 using Easter2025.Components;
 using Easter2025.Customs.Generics;
 using Easter2025.Utilies;
+using Easter2025.Views;
 using Easter2025.Views.Local;
 using Kitchen;
 using KitchenData;
@@ -14,7 +15,7 @@ namespace Easter2025.Customs.Appliances.SceneAppliances
     public class Bush : GenericSceneAppliance
     {
         public override string UniqueNameID => "Bush";
-        public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("Bush").AssignMaterialsByNames();
+        public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("VanillaBush").AssignMaterialsByNames();
         public override List<IApplianceProperty> Properties => new List<IApplianceProperty>
         {
             new CEggBush(),
@@ -40,6 +41,8 @@ namespace Easter2025.Customs.Appliances.SceneAppliances
             base.OnRegister(gameDataObject);
             HoldPointContainer holdPointContainer = gameDataObject.Prefab.AddComponent<HoldPointContainer>();
             holdPointContainer.HoldPoint = gameDataObject.Prefab.GetChild("HoldPoint").transform;
+            BushView bushView = gameDataObject.Prefab.AddComponent<BushView>();
+            bushView.Animator = gameDataObject.Prefab.GetComponentInChildren<Animator>();
         }
     }
 }

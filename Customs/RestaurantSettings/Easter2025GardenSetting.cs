@@ -42,7 +42,7 @@ namespace Easter2025.Customs.RestaurantSettings
         public override UnlockPack UnlockPack { get; protected set; }
 
         public override Unlock StartingUnlock => GDOReferences.DishPlasticEggs;
-        // public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("EasterSnowglobe").AssignMaterialsByNames();
+        public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("EasterSettingSnowglobe").AssignMaterialsByNames();
         public override bool AlwaysLight => true;
 
         public override List<(Locale, BasicInfo)> InfoList => CenteralLang.RestaurantSettings.Easter2025GardenSetting;

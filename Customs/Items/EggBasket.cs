@@ -11,7 +11,7 @@ namespace Easter2025.Customs.Items
     public class EggBasket : CustomItem
     {
         public override string UniqueNameID => "EggBasket";
-        public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("PlaceholderEggBasket").AssignMaterialsByNames();
+        public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("EggBasket").AssignMaterialsByNames();
         public override bool IsIndisposable => true;
         public override int MaxOrderSharers => 3;
 

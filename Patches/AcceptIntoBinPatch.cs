@@ -20,6 +20,13 @@ namespace Easter2025.Patches
                         UtilitySystem._Set(cItemTransferProposal.Destination, new CHasOrbs());
                     }
                 }
+                if (UtilitySystem._Has<CCanTriggerOrangeOrbs>(cItemTransferProposal.Item))
+                {
+                    if (UtilitySystem._Has<CHasOrbs>(cItemTransferProposal.Destination) && !UtilitySystem._Has<CHasOrangeOrbs>(cItemTransferProposal.Destination))
+                    {
+                        UtilitySystem._Set(cItemTransferProposal.Destination, new CHasOrangeOrbs());
+                    }
+                }
             }
         }
     }

@@ -48,7 +48,7 @@ namespace Easter2025.Customs.Appliances
             limitedItemSourceView.HeldItemPosition = gameDataObject.Prefab.GetChild("HoldPoint").transform;
             limitedItemSourceView.Items = new List<GameObject>
             {
-                gameDataObject.Prefab.GetChild("HoldPoint/PlaceholderEggBasket")
+                gameDataObject.Prefab.GetChild("HoldPoint/EggBasket")
             };
         }
     }

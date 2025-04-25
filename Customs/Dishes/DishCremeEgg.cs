@@ -56,7 +56,7 @@ namespace Easter2025.Customs.Dishes
         {
             new Dish.MenuItem
             {
-                Item = GDOReferences.HotCrossBun,
+                Item = GDOReferences.WrappedCremeEgg,
                 Phase = MenuPhase.Dessert,
                 Weight = 1,
                 DynamicMenuType = DynamicMenuType.Static,

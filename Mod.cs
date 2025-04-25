@@ -1,18 +1,21 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Easter2025.Components;
 using Easter2025.Customs.RestaurantSettings;
 using Easter2025.Utilies;
 using Easter2025.Views;
 using Kitchen;
 using KitchenData;
 using KitchenLib;
+using KitchenLib.Achievements;
 using KitchenLib.Event;
 using KitchenLib.Interfaces;
 using KitchenLib.Logging.Exceptions;
 using KitchenLib.References;
 using KitchenLib.Utils;
 using KitchenMods;
+using TMPro;
 using UnityEngine;
 using KitchenLogger = KitchenLib.Logging.KitchenLogger;
 
@@ -21,19 +24,25 @@ namespace Easter2025
     public class Mod : BaseMod, IModSystem, IAutoRegisterAll
     {
         public const string MOD_GUID = "com.starfluxgames.easter2025";
-        public const string MOD_NAME = "Easter 2025";
-        public const string MOD_VERSION = "0.0.4";
+        public const string MOD_NAME = "The Great Eggscape";
+        public const string MOD_VERSION = "0.1.0";
         public const string MOD_AUTHOR = "StarFluxGames";
         public const string MOD_GAMEVERSION = ">=1.2.1";
 
         internal static AssetBundle Bundle;
         internal static KitchenLogger Logger;
+        internal static AchievementsManager achievementsManager;
 
-        internal static ViewType RED_BUNNY_VIEW = (ViewType)VariousUtils.GetID("RED_BUNNY_VIEW");
-        internal static ViewType GREEN_BUNNY_VIEW = (ViewType)VariousUtils.GetID("GREEN_BUNNY_VIEW");
-        internal static ViewType BLUE_BUNNY_VIEW = (ViewType)VariousUtils.GetID("BLUE_BUNNY_VIEW");
+        internal static readonly ViewType RED_BUNNY_VIEW = (ViewType)VariousUtils.GetID("RED_BUNNY_VIEW");
+        internal static readonly ViewType GREEN_BUNNY_VIEW = (ViewType)VariousUtils.GetID("GREEN_BUNNY_VIEW");
+        internal static readonly ViewType BLUE_BUNNY_VIEW = (ViewType)VariousUtils.GetID("BLUE_BUNNY_VIEW");
+        internal static readonly ViewType ROAMING_RED_BUNNY_VIEW = (ViewType)VariousUtils.GetID("ROAMING_RED_BUNNY_VIEW");
+        internal static readonly ViewType ROAMING_GREEN_BUNNY_VIEW = (ViewType)VariousUtils.GetID("ROAMING_GREEN_BUNNY_VIEW");
+        internal static readonly ViewType ROAMING_BLUE_BUNNY_VIEW = (ViewType)VariousUtils.GetID("ROAMING_BLUE_BUNNY_VIEW");
 
-        public static bool ENABLE_ADDITIONAL_LOBBY_DISHES = false;
+        internal static readonly string ACHIEVEMENT_SERVE_THREE_COURSE_EGGS = "ACHIEVEMENT_SERVE_THREE_COURSE_EGGS";
+
+        public static readonly bool ENABLE_ADDITIONAL_LOBBY_DISHES = true;
 
         public Mod() : base(MOD_GUID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, MOD_GAMEVERSION, Assembly.GetExecutingAssembly())
         {
@@ -53,13 +62,16 @@ namespace Easter2025
             Bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).FirstOrDefault() ?? throw new MissingAssetBundleException(MOD_GUID);
             Logger = InitLogger();
 
-            //achievementsManager = new AchievementsManager(MOD_GUID, MOD_NAME);
-            //achievementsManager.RegisterAchievement(new Achievement("1", "Salmon Sensations1", "Serve a Salmon Roll to a customer.", new Texture2D(1, 1)).SetHiddenState(AchievementHiddenState.NotHidden));
-            //achievementsManager.RegisterAchievement(new Achievement("2", "Salmon Sensations2", "Serve a Salmon Roll to a customer.", new Texture2D(1, 1)).SetHiddenState(AchievementHiddenState.HiddenUntilUnlocked));
-            //achievementsManager.RegisterAchievement(new Achievement("3", "Salmon Sensations3", "Serve a Salmon Roll to a customer.", new Texture2D(1, 1)).SetHiddenState(AchievementHiddenState.HiddenUntilCompleted));
+            achievementsManager = new AchievementsManager(MOD_GUID, MOD_NAME);
+            achievementsManager.RegisterAchievement(new Achievement(ACHIEVEMENT_SERVE_THREE_COURSE_EGGS, "An Eggcellent Meal", "Serve 3 different egg courses to a single customer", new Texture2D(1, 1)).SetHiddenState(AchievementHiddenState.NotHidden));
 
-            //achievementsManager.Load();
-            //achievementsManager.Save();
+            achievementsManager.Load();
+            achievementsManager.Save();
+            
+            var spriteAsset = Bundle.LoadAsset<TMP_SpriteAsset>("SearchingIcon");
+            TMP_Settings.defaultSpriteAsset.fallbackSpriteAssets.Add(spriteAsset);
+            spriteAsset.material = Object.Instantiate(TMP_Settings.defaultSpriteAsset.material);
+            spriteAsset.material.mainTexture = Bundle.LoadAsset<Texture2D>("SearchingIcon_Tex");
 
             // RefGenerator.GenerateGDOReferences(Assembly.GetExecutingAssembly(), Path.Combine(Application.persistentDataPath, "GeneratedReferences.cs"));
             
@@ -67,7 +79,14 @@ namespace Easter2025
             {
                 if (args.firstBuild)
                 {
-                    // Adding Orbs to Bin
+                    // Adding Carrot Checker
+                    if (args.gamedata.TryGet(ItemReferences.Carrot, out Item carrot) && args.gamedata.TryGet(ItemReferences.CarrotChopped, out Item carrotChopped))
+                    {
+                        carrot.Properties.Add(new CCanTriggerOrangeOrbs());
+                        carrotChopped.Properties.Add(new CCanTriggerOrangeOrbs());
+                    }
+
+                    // Adding Bunny Ears
                     if (args.gamedata.TryGet(PlayerCosmeticReferences.BunnyEarHat, out PlayerCosmetic BunnyEarHat))
                     {
                         BunnyEarHat.CustomerSettings.Add((RestaurantSetting)GDOUtils.GetCustomGameDataObject<Easter2025GardenSetting>().GameDataObject);
@@ -79,10 +98,13 @@ namespace Easter2025
                         GameObject Orbs = GameObject.Instantiate(Bundle.LoadAsset<GameObject>("Orb Container"));
                         Orbs.transform.SetParent(Bin.Prefab.transform);
                         Orbs.transform.localPosition = Vector3.zero;
-                        Orbs.SetActive(false);
+                        Orbs.SetActive(true);
 
                         BinOrbView view = Bin.Prefab.AddComponent<BinOrbView>();
-                        view.OrbContainer = Orbs;
+                        view.GreenOrbs = Orbs.GetChild("GreenOrbs");
+                        view.OrangeOrbs = Orbs.GetChild("OrangeOrbs");
+                        view.GreenOrbs.SetActive(false);
+                        view.OrangeOrbs.SetActive(false);
                     }
 
                     if (args.gamedata.TryGet(ApplianceReferences.Countertop, out Appliance Countertop))

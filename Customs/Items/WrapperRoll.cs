@@ -15,5 +15,6 @@ namespace Easter2025.Customs.Items
         public override bool AllowSplitMerging => true;
         public override bool PreventExplicitSplit => true;
         public override Item SplitSubItem => GDOReferences.Wrapper;
+        public override Appliance DedicatedProvider => GDOReferences.WrapperProvider;
     }
 }

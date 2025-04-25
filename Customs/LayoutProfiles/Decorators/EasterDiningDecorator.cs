@@ -31,7 +31,7 @@ namespace Easter2025.Customs.LayoutProfiles.Decorators
                             {
                                 Position = result,
                                 Appliance = GDOReferences.Bush.ID,
-                                Rotation = Quaternion.identity
+                                Rotation = new Quaternion(0, Random.Range(0, 360), 0, 0)
                             });
                             used_positions.Add(result);
                             foreach (LayoutPosition position in LayoutHelpers.AllNearby)
