@@ -49,6 +49,7 @@ namespace Easter2025.Systems.Achievements
                 money.Amount += REWARD_AMOUNT;
                 SetSingleton(money);
             }
+            Mod.achievementsManager.UnlockAchievement(Mod.ACHIEVEMENT_TRIGGER_BUNNIES);
                 
             EntityManager.CreateEntity(typeof(SHasTriggeredBunnies));
         }

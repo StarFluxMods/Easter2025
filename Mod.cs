@@ -41,8 +41,9 @@ namespace Easter2025
         internal static readonly ViewType ROAMING_BLUE_BUNNY_VIEW = (ViewType)VariousUtils.GetID("ROAMING_BLUE_BUNNY_VIEW");
 
         internal static readonly string ACHIEVEMENT_SERVE_THREE_COURSE_EGGS = "ACHIEVEMENT_SERVE_THREE_COURSE_EGGS";
+        internal static readonly string ACHIEVEMENT_TRIGGER_BUNNIES = "ACHIEVEMENT_TRIGGER_BUNNIES";
 
-        public static readonly bool ENABLE_ADDITIONAL_LOBBY_DISHES = true;
+        public static readonly bool ENABLE_ADDITIONAL_LOBBY_DISHES = false;
 
         public Mod() : base(MOD_GUID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, MOD_GAMEVERSION, Assembly.GetExecutingAssembly())
         {
@@ -63,7 +64,8 @@ namespace Easter2025
             Logger = InitLogger();
 
             achievementsManager = new AchievementsManager(MOD_GUID, MOD_NAME);
-            achievementsManager.RegisterAchievement(new Achievement(ACHIEVEMENT_SERVE_THREE_COURSE_EGGS, "An Eggcellent Meal", "Serve 3 different egg courses to a single customer", new Texture2D(1, 1)).SetHiddenState(AchievementHiddenState.NotHidden));
+            achievementsManager.RegisterAchievement(new Achievement(ACHIEVEMENT_SERVE_THREE_COURSE_EGGS, "An Eggcellent Meal", "Serve 3 different egg courses to a single customer", Bundle.LoadAsset<Texture2D>("EggBasketIcon")).SetHiddenState(AchievementHiddenState.NotHidden));
+            achievementsManager.RegisterAchievement(new Achievement(ACHIEVEMENT_TRIGGER_BUNNIES, "Bunnies?", "Complete the hidden Easter Egg for some fancy bunnies!", Bundle.LoadAsset<Texture2D>("BunnyIcon")).SetHiddenState(AchievementHiddenState.HiddenUntilCompleted));
 
             achievementsManager.Load();
             achievementsManager.Save();
