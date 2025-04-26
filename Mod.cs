@@ -25,7 +25,7 @@ namespace Easter2025
     {
         public const string MOD_GUID = "com.starfluxgames.easter2025";
         public const string MOD_NAME = "The Great Eggscape";
-        public const string MOD_VERSION = "0.1.0";
+        public const string MOD_VERSION = "0.1.1";
         public const string MOD_AUTHOR = "StarFluxGames";
         public const string MOD_GAMEVERSION = ">=1.2.1";
 
@@ -151,6 +151,28 @@ namespace Easter2025
                                 if (!found)
                                 {
                                     WrapperProvider.Processes.Add(process);
+                                }
+                            }
+                        }
+                        
+                        // Adding Processes to EggBasket Provider
+                        if (args.gamedata.TryGet(GDOReferences.EggBasketProvider.ID, out Appliance EggBasketProvider))
+                        {
+                            foreach (Appliance.ApplianceProcesses process in Countertop.Processes)
+                            {
+                                bool found = false;
+                                foreach (Appliance.ApplianceProcesses process2 in WrapperProvider.Processes)
+                                {
+                                    if (process.Process == process2.Process)
+                                    {
+                                        found = true;
+                                        break;
+                                    }
+                                }
+
+                                if (!found)
+                                {
+                                    EggBasketProvider.Processes.Add(process);
                                 }
                             }
                         }

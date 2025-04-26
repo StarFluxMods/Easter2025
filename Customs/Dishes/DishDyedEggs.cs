@@ -13,7 +13,7 @@ namespace Easter2025.Customs.Dishes
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
         public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
-        public override DishType Type => DishType.Main;
+        public override DishType Type => DishType.Base;
         public override int Difficulty => 2;
 
         public override List<string> StartingNameSet => new()
