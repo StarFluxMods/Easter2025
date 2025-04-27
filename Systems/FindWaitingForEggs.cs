@@ -23,7 +23,7 @@ namespace Easter2025.Systems
             {
                 DynamicBuffer<CWaitingForItem> waitingForItemBuffer = EntityManager.GetBuffer<CWaitingForItem>(entity);
                 if (!Require(entity, out CPatience cPatience)) continue;
-                if (!(cPatience.RemainingTime < 0.3f)) continue;
+                if ((cPatience.StartTime > 0f ? cPatience.RemainingTime : 1f) > 0.5f) continue;
                 foreach (CWaitingForItem waitingForItem in waitingForItemBuffer)
                 {
                     if (EntityManager.HasComponent<CHidableItem>(waitingForItem.Item))

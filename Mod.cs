@@ -25,7 +25,7 @@ namespace Easter2025
     {
         public const string MOD_GUID = "com.starfluxgames.easter2025";
         public const string MOD_NAME = "The Great Eggscape";
-        public const string MOD_VERSION = "0.1.1";
+        public const string MOD_VERSION = "0.1.2";
         public const string MOD_AUTHOR = "StarFluxGames";
         public const string MOD_GAMEVERSION = ">=1.2.1";
 
